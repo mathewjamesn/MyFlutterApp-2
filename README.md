@@ -12,16 +12,18 @@ A Flutter mobile application with menu items that display toast messages.
 
 ### Prerequisites
 
-- Flutter SDK (3.0.0 or higher)
+- Flutter SDK (3.0.0 or higher) - [Installation Guide](https://docs.flutter.dev/get-started/install)
 - Dart SDK
 - Android Studio / VS Code with Flutter extensions
 - Android SDK for building APK
+
+**Note:** Make sure Flutter is added to your system PATH after installation.
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/MyFlutterApp-2.git
+git clone https://github.com/mathewjamesn/MyFlutterApp-2.git
 cd MyFlutterApp-2
 ```
 
@@ -33,6 +35,28 @@ flutter pub get
 3. Run the app:
 ```bash
 flutter run
+```
+
+### App Icon Setup
+
+The app uses Android vector drawable icons (XML-based). If you want to use custom PNG icons:
+
+1. Place your 1024x1024 icon at `assets/icon/app_icon.png`
+2. Add `flutter_launcher_icons` to `pubspec.yaml`:
+```yaml
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/icon/app_icon.png"
+```
+3. Run: `flutter pub run flutter_launcher_icons`
+
+Alternatively, a Python script (`generate_icon.py`) is included to create a simple icon:
+```bash
+pip install Pillow
+python generate_icon.py
 ```
 
 ### Building APK
